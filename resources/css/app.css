@@ -1,0 +1,1093 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* nav */
+
+nav {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 58px;
+    gap: 28px;
+}
+
+.nav-logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a7a5e;
+    margin-right: auto;
+    letter-spacing: -0.3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #444;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #1a7a5e;
+}
+
+.nav-links a.nav-link-active {
+    color: #1a7a5e;
+    border-bottom-color: #1a7a5e;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: #444;
+}
+
+.nav-link:hover,
+.nav-link.nav-link-active {
+    color: #1a7a5e;
+}
+
+.nav-cabinet {
+    font-size: 14px;
+    color: #444;
+}
+
+.nav-cabinet:hover {
+    color: #1a7a5e;
+}
+
+/* кнопки */
+
+.btn-primary {
+    background: #1e9e76;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 7px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.15s;
+}
+
+.btn-primary:hover {
+    background: #167a5b;
+    color: #fff;
+}
+
+.btn-ghost {
+    background: none;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-ghost:hover {
+    background: #f4f4f4;
+}
+
+.btn-outline {
+    border: 2px solid rgba(255,255,255,0.55);
+    color: #fff;
+    padding: 7px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.btn-cancel {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 11px;
+}
+
+.btn-link-danger {
+    background: none;
+    border: none;
+    color: #c0392b;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+/* флэш */
+
+.flash-success {
+    background: #edf7f2;
+    border-left: 3px solid #1e9e76;
+    color: #1a5c42;
+    padding: 11px 20px;
+    font-size: 14px;
+}
+
+/* страничный контейнер */
+
+.page-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 36px 20px 72px;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    color: #666;
+    margin-top: 4px;
+}
+
+/* карточка секции */
+
+.section-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #1a1a1a;
+}
+
+/* hero */
+
+.home-hero {
+    background: linear-gradient(140deg, #0d5c43 0%, #23b882 100%);
+    padding: 72px 24px 80px;
+    text-align: center;
+    color: #fff;
+}
+
+.home-hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.25;
+}
+
+.home-hero p {
+    font-size: 15px;
+    opacity: 0.82;
+    margin-bottom: 26px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* статистика */
+
+.home-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    max-width: 1160px;
+    margin: 28px auto;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a7a5e;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* о нас */
+
+.home-about {
+    max-width: 1160px;
+    margin: 0 auto 44px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.about-logo {
+    background: #f6faf8;
+    border: 1px solid #e0ede8;
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+}
+
+.about-tagline {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a7a5e;
+    margin-bottom: 10px;
+}
+
+.about-logo p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* отзывы */
+
+.reviews-block h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.review-card {
+    border: 1px solid #e8e8e8;
+    border-radius: 9px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.review-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #c8ede2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #1a5c42;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.review-author {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.review-stars {
+    color: #888;
+    font-size: 12px;
+    margin-left: auto;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.review-hike {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 6px;
+}
+
+.review-slide { display: none; }
+.review-slide.active { display: block; }
+
+.slider-dots {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dot.active {
+    background: #1e9e76;
+}
+
+/* каталог */
+
+.catalog-page {
+    max-width: 1160px;
+    margin: 28px auto;
+    padding: 0 20px 64px;
+}
+
+.catalog-filters {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.catalog-filters a {
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    color: #555;
+    font-size: 13px;
+    transition: all 0.12s;
+}
+
+.catalog-filters a.active,
+.catalog-filters a:hover {
+    background: #d4f0e5;
+    color: #0d5c43;
+    border-color: #7dd9b8;
+}
+
+.catalog-sort {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-bottom: 22px;
+    font-size: 13px;
+    color: #999;
+}
+
+.catalog-sort a {
+    padding: 4px 11px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    color: #555;
+    font-size: 12px;
+}
+
+.catalog-sort a.active,
+.catalog-sort a:hover {
+    background: #efefef;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.hike-card {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.15s, transform 0.12s;
+}
+
+.hike-card:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transform: translateY(-2px);
+}
+
+.hike-card-badge {
+    background: #d4f0e5;
+    color: #0d5c43;
+    font-size: 12px;
+    padding: 5px 13px;
+    font-weight: 500;
+}
+
+.hike-card-body {
+    padding: 14px 16px;
+}
+
+.hike-card-body h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: #1a1a1a;
+}
+
+.hike-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    margin-bottom: 13px;
+    font-size: 13px;
+    color: #666;
+}
+
+.hike-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hike-price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a7a5e;
+}
+
+/* детальная страница похода */
+
+.hike-page {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+}
+
+.hike-hero {
+    background: linear-gradient(140deg, #0d5c43, #23b882);
+    padding: 44px 32px;
+    color: #fff;
+    border-radius: 0 0 14px 14px;
+    margin-bottom: 26px;
+}
+
+.hike-hero-cat {
+    font-size: 12px;
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hike-hero h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 6px 0;
+}
+
+.hike-hero-region {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.hike-detail {
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 24px;
+}
+
+.hike-detail-main h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 22px 0 10px;
+    color: #1a1a1a;
+}
+
+.hike-detail-main p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.hike-chars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+}
+
+.hike-char {
+    background: #f8faf9;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 11px 13px;
+}
+
+.char-label {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.char-val {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hike-booking-box {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 18px 20px;
+    position: sticky;
+    top: 76px;
+}
+
+.hike-booking-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a7a5e;
+}
+
+.hike-booking-hint {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 14px;
+}
+
+.hike-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 14px;
+}
+
+.hike-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 11px;
+    border: 1px solid #e6e6e6;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.hike-date.full { opacity: 0.45; }
+
+.date-range { font-weight: 500; }
+
+.spots-free {
+    font-size: 12px;
+    color: #1a7a5e;
+}
+
+.spots-full {
+    font-size: 12px;
+    color: #c0392b;
+}
+
+/* форма записи */
+
+.booking-page {
+    max-width: 580px;
+    margin: 28px auto;
+    padding: 0 20px 64px;
+}
+
+.booking-page h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    font-size: 13px;
+    color: #888;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.back-link:hover { color: #1a7a5e; }
+
+.form-section {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+}
+
+.form-section h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.date-option {
+    display: block;
+    border: 1px solid #e6e6e6;
+    border-radius: 7px;
+    padding: 11px 13px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: border-color 0.12s, background 0.12s;
+}
+
+.date-option:has(input:checked) {
+    border-color: #1e9e76;
+    background: #edf7f2;
+}
+
+.date-option.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.date-option input { display: none; }
+
+.date-option-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-row { margin-bottom: 13px; }
+
+.form-label {
+    font-size: 13px;
+    color: #555;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.req { color: #c0392b; }
+
+.form-input {
+    width: 100%;
+    padding: 8px 11px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+    background: #fff;
+    transition: border-color 0.12s;
+    color: #222;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1e9e76;
+    box-shadow: 0 0 0 3px rgba(30,158,118,0.09);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-input.input-error { border-color: #c0392b; }
+
+.field-error {
+    font-size: 12px;
+    color: #c0392b;
+    margin-top: 3px;
+}
+
+.alert-error {
+    background: #fdf3f2;
+    border: 1px solid #f5c6c6;
+    border-radius: 8px;
+    padding: 11px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #a93226;
+}
+
+.alert-success {
+    background: #edf7f2;
+    border: 1px solid #a3d9bf;
+    border-radius: 8px;
+    padding: 11px 14px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #1a5c42;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* личный кабинет */
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.booking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border: 1px solid #e8e8e8;
+    border-radius: 9px;
+    background: #fafafa;
+}
+
+.booking-hike {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.booking-dates {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.booking-participant {
+    font-size: 13px;
+    color: #999;
+}
+
+.booking-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 44px 20px;
+    color: #999;
+}
+
+.empty-state p { margin-bottom: 14px; }
+
+/* бейджи */
+
+.badge {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.badge-new { background: #eaf1fb; color: #2156a0; }
+.badge-ok { background: #edf7f2; color: #1a5c42; }
+.badge-cancel { background: #fdf3f2; color: #a93226; }
+
+/* админка */
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    min-height: calc(100vh - 59px);
+}
+
+.admin-sidebar {
+    background: #18181f;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.admin-logo {
+    color: #eee;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    padding-left: 8px;
+}
+
+.admin-nav-item {
+    color: #8a8a9a;
+    padding: 7px 10px;
+    border-radius: 7px;
+    font-size: 13px;
+    display: block;
+}
+
+.admin-nav-item:hover,
+.admin-nav-item.active {
+    background: #26262f;
+    color: #eee;
+}
+
+.admin-main {
+    padding: 22px 24px;
+    background: #f8f9fa;
+}
+
+.admin-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.table-wrap {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+th {
+    background: #f8f8f8;
+    padding: 9px 13px;
+    text-align: left;
+    font-weight: 500;
+    color: #888;
+    font-size: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+td {
+    padding: 9px 13px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.action-btn {
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.action-ok { color: #1a5c42; border-color: #a3d9bf; }
+.action-ok:hover { background: #edf7f2; }
+.action-cancel { color: #a93226; border-color: #f5c6c6; }
+.action-cancel:hover { background: #fdf3f2; }
+
+/* условия оплаты */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.info-item {
+    padding: 14px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+}
+
+.info-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.info-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.55;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.step-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1e9e76;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.step-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.step-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.55;
+}
+
+.refund-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+
+.refund-table th {
+    background: #f8f8f8;
+    padding: 9px 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.refund-table td {
+    padding: 9px 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.refund-ok { color: #1a5c42; font-weight: 500; }
+.refund-warn { color: #c07a00; font-weight: 500; }
+.refund-no { color: #a93226; font-weight: 500; }
+
+.info-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* где найти */
+
+.location-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-item { display: flex; gap: 10px; }
+
+.contact-label {
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+}
+
+.contact-value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contact-link { color: #1a7a5e; }
+.contact-link:hover { text-decoration: underline; }
+
+.directions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.direction-item {
+    padding: 14px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 9px;
+}
+
+.direction-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.direction-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.55;
+}
+
+/* карта на главной */
+
+.home-map {
+    max-width: 1160px;
+    margin: 0 auto 44px;
+    padding: 0 20px;
+}
+
+.home-map h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
