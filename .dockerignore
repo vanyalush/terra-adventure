@@ -1,0 +1,8 @@
+node_modules
+.git
+.env
+storage/logs
+tests
+README.md
+*.md
+.phpunit.result.cache
